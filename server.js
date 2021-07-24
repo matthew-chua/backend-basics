@@ -7,6 +7,7 @@ const errorHandler = require("./middleware/error");
 
 //Route files
 const bootcamps = require("./routes/bootcamps");
+const courses = require("./routes/courses");
 const { connect } = require("./routes/bootcamps");
 
 //load env
@@ -28,6 +29,7 @@ if (process.env.NODE_ENV === "development") {
 
 //Mount router
 app.use("/api/v1/bootcamps", bootcamps);
+app.use("/api/v1/courses", courses);
 
 //middleware for error handling should be inserted after router is mounted
 app.use(errorHandler);
